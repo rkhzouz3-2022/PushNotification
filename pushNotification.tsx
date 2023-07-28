@@ -41,7 +41,7 @@ export const notificationListener = () => {
         })
         .catch(error => console.log("failed", error));
 
-    // TODO: Foreground
+    // Foreground
     messaging().onMessage(remoteMessage => {
         console.log("foreground", remoteMessage);
     })

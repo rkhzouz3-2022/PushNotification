@@ -8,6 +8,7 @@
 import React, { useEffect, useState } from 'react';
 import messaging from "@react-native-firebase/messaging";
 import { getFCMToken, requestUserPermission } from './pushNotification';
+import NotificationController from './notificationController.android';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -77,6 +78,8 @@ function App(): JSX.Element {
   };
 
   const FCMToken = getFCMToken();
+  NotificationController();
+  // For iOS
   // requestUserPermission();
 
   return (
